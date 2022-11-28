@@ -1,0 +1,113 @@
+import java.util.*;
+public class Team {
+    static String name;
+    static String id;
+    static String region;
+    static String style;
+    static int top;
+    static int jungle;
+    static int mid;
+    static int bot;
+    static int support;
+    static int teamfight;
+    static int macro;
+    static int regionid;
+    static int styleid;
+    static int elo;
+    static String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
+    static String[] styles = {"Neutral", "Passive", "Aggressive"};
+    static ArrayList<Team> teamlist = new ArrayList<Team>();
+    public static void intialize() {
+        Team C9 = new Team();
+        C9.setup("Cloud9", "C9", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
+        teamlist.add(C9);
+        Team FLY = new Team();
+        FLY.setup("FlyQuest", "FLY", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
+        teamlist.add(FLY);
+    }
+    public static void view() {
+        System.out.println("Team: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Region: " + region);
+        System.out.println("Team Playstyle: " + style);
+        System.out.println("Top Lane Rating: " + top);
+        System.out.println("Jungle Rating: " + jungle);
+        System.out.println("Mid Lane Rating: " + mid);
+        System.out.println("Bot Lane Rating: " + bot);
+        System.out.println("Support Rating: " + support);
+        System.out.println("Teamfight Rating: " + teamfight);
+        System.out.println("Macro Rating: " + macro);
+        System.out.println("Elo: " + elo);
+    }
+    public static void setup(String a, String b, String c, String d, int e, int f, int g, int h, int i, int j, int k) {
+        name = a;
+        id = b;
+        region = c;
+        style = d;
+        top = e;
+        jungle = f;
+        mid = g;
+        bot = h;
+        support = i;
+        teamfight = j;
+        macro = k;
+        for(int r = 0; r < 12; r++) {
+            if(region.equals(regions[r])) {
+                regionid = r + 1;
+            }
+        }
+        for(int s = 0; s < 3; s++) {
+            if(style.equals(styles[s])) {
+                styleid = s;
+            }
+        }
+        elo = 1000;
+    }
+    public static void edit(String change, int value) {
+        if(change.toLowerCase().equals("top")) {
+            top = value;
+        }
+        else if(change.toLowerCase().equals("jungle")) {
+            jungle = value;
+        }
+        else if(change.toLowerCase().equals("mid")) {
+            mid = value;
+        }
+        else if(change.toLowerCase().equals("bot")) {
+            bot = value;
+        }
+        else if(change.toLowerCase().equals("support")) {
+            support = value;
+        }
+        else if(change.toLowerCase().equals("teamfight")) {
+            teamfight = value;
+        }
+        else if(change.toLowerCase().equals("macro")) {
+            macro = value;
+        }
+    }
+    public static void edit(String change, String value) {
+        if(change.toLowerCase().equals("name")) {
+            name = value;
+        }
+        else if(change.toLowerCase().equals("id")) {
+            id = value;
+        }
+        else if(change.toLowerCase().equals("region")) {
+            region = value;
+            for(int r = 0; r < 12; r++) {
+                if(region.equals(regions[r])) {
+                    regionid = r + 1;
+                }
+            }
+        }
+        else if(change.toLowerCase().equals("style")) {
+            style = value;
+            for(int s = 0; s < 3; s++) {
+                if(style.equals(styles[s])) {
+                    styleid = s;
+                }
+            }
+        }
+    }
+}
