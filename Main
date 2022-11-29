@@ -20,7 +20,7 @@ import java.util.*;
 import java.lang.Math;
 public class Main {
     static Scanner Input = new Scanner(System.in);
-    static public void Stats() {
+    public static void Stats() {
         System.out.println("Which team would you like to view the stats of? Input their ID to view.");
         Input.nextLine();
         String team = Input.nextLine();
@@ -31,11 +31,11 @@ public class Main {
             }
         }
     }
-    static public void AddTeam() {
+    public static void AddTeam() {
     }
-    static public void EditStats() {
+    public static void EditStats() {
     }
-    static public void Match() {
+    public static void Match() {
     }
     public static void main(String args[]) {
         Team.intialize();
