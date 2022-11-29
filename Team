@@ -1,23 +1,23 @@
 import java.util.*;
 public class Team {
-    static String name;
-    static String id;
-    static String region;
-    static String style;
-    static int top;
-    static int jungle;
-    static int mid;
-    static int bot;
-    static int support;
-    static int teamfight;
-    static int macro;
-    static int regionid;
-    static int styleid;
-    static int elo;
-    static String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
-    static String[] styles = {"Neutral", "Passive", "Aggressive"};
-    static ArrayList<Team> teamlist = new ArrayList<Team>();
-    public static void intialize() {
+    String name;
+    String id;
+    String region;
+    String style;
+    int top;
+    int jungle;
+    int mid;
+    int bot;
+    int support;
+    int teamfight;
+    int macro;
+    int regionid;
+    int styleid;
+    int elo;
+    String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
+    String[] styles = {"Neutral", "Passive", "Aggressive"};
+    ArrayList<Team> teamlist = new ArrayList<Team>();
+    public void intialize() {
         Team C9 = new Team();
         C9.setup("Cloud9", "C9", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
         teamlist.add(C9);
@@ -25,7 +25,7 @@ public class Team {
         FLY.setup("FlyQuest", "FLY", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
         teamlist.add(FLY);
     }
-    public static void view() {
+    public void view() {
         System.out.println("Team: " + name);
         System.out.println("ID: " + id);
         System.out.println("Region: " + region);
@@ -39,7 +39,7 @@ public class Team {
         System.out.println("Macro Rating: " + macro);
         System.out.println("Elo: " + elo);
     }
-    public static void setup(String a, String b, String c, String d, int e, int f, int g, int h, int i, int j, int k) {
+    public void setup(String a, String b, String c, String d, int e, int f, int g, int h, int i, int j, int k) {
         name = a;
         id = b;
         region = c;
@@ -63,7 +63,7 @@ public class Team {
         }
         elo = 1000;
     }
-    public static void edit(String change, int value) {
+    public void edit(String change, int value) {
         if(change.toLowerCase().equals("top")) {
             top = value;
         }
@@ -86,7 +86,7 @@ public class Team {
             macro = value;
         }
     }
-    public static void edit(String change, String value) {
+    public void edit(String change, String value) {
         if(change.toLowerCase().equals("name")) {
             name = value;
         }
