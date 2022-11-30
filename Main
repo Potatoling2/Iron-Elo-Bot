@@ -29,6 +29,7 @@ public class Main {
                 System.out.println("Test.");
                 Team.teamlist.get(a).view();
             }
+            System.out.println("Pain.");
         }
     }
     public static void AddTeam() {
