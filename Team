@@ -14,15 +14,13 @@ public class Team {
     int regionid;
     int styleid;
     int elo;
-    String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
-    String[] styles = {"Neutral", "Passive", "Aggressive"};
-    ArrayList<Team> teamlist = new ArrayList<Team>();
-    public void intialize() {
-        Team C9 = new Team();
-        C9.setup("Cloud9", "C9", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
+    static String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
+    static String[] styles = {"Neutral", "Passive", "Aggressive"};
+    static ArrayList<Team> teamlist = new ArrayList<Team>();
+    public static void initialize() {
+        Team C9 = new Team("Cloud9", "C9", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
         teamlist.add(C9);
-        Team FLY = new Team();
-        FLY.setup("FlyQuest", "FLY", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
+        Team FLY = new Team("FlyQuest", "FLY", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
         teamlist.add(FLY);
     }
     public void view() {
@@ -38,8 +36,9 @@ public class Team {
         System.out.println("Teamfight Rating: " + teamfight);
         System.out.println("Macro Rating: " + macro);
         System.out.println("Elo: " + elo);
+        System.out.println("");
     }
-    public void setup(String a, String b, String c, String d, int e, int f, int g, int h, int i, int j, int k) {
+    Team(String a, String b, String c, String d, int e, int f, int g, int h, int i, int j, int k) {
         name = a;
         id = b;
         region = c;
