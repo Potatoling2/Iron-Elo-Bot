@@ -24,12 +24,11 @@ public class Main {
         System.out.println("Which team would you like to view the stats of? Input their ID to view.");
         Input.nextLine();
         String team = Input.nextLine();
+        System.out.println("");
         for(int a = 0; a < Team.teamlist.size(); a++) {
             if(team.toUpperCase().equals(Team.teamlist.get(a).id)) {
-                System.out.println("Test.");
                 Team.teamlist.get(a).view();
             }
-            System.out.println("Pain.");
         }
     }
     public static void AddTeam() {
@@ -39,7 +38,6 @@ public class Main {
     public static void Match() {
     }
     public static void main(String args[]) {
-        Team.intialize();
         System.out.println("Welcome to Iron Elo, a League of Legends Esports Simulator.");
         System.out.println("Would you like an explanation of what this bot does? (yes/no)");
         String explain = Input.nextLine();
@@ -51,6 +49,17 @@ public class Main {
             System.out.println("Matches adjust elo score accordingly, but do not affect any of the team stats. Those must be edited by users.");
             System.out.println("It is recommended to keep stats the same for tournament simulation, barring drastic changes such as substitutions.");
             System.out.println("Alright, with all of that out of the way, let's proceed.");
+            System.out.println("");
+        }
+        else {
+            System.out.println("Ok then, let's proceed.");
+            System.out.println("");
+        }
+        System.out.println("Would you like to use a premade database of potential Worlds Qualifying teams? (yes/no)");
+        String database = Input.nextLine();
+        if(database.toLowerCase().contains("y")) {
+            Team.initialize();
+            System.out.println("Teams added.");
             System.out.println("");
         }
         else {
