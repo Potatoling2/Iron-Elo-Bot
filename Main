@@ -55,6 +55,20 @@ public class Main {
         }
         System.out.println("Do they have a specific style? (neutral/passive/aggressive)");
         String style = Input.nextLine();
+        System.out.println("Rate their starting top laner (0-10)");
+        String top = Input.nextLine();
+        System.out.println("Rate their starting jungler (0-10)");
+        String jungle = Input.nextLine();
+        System.out.println("Rate their starting mid laner (0-10)");
+        String mid = Input.nextLine();
+        System.out.println("Rate their starting bot laner (0-10)");
+        String bot = Input.nextLine();
+        System.out.println("Rate their starting support (0-10)");
+        String support = Input.nextLine();
+        System.out.println("Rate their teamfighting (0-10)");
+        String teamfight = Input.nextLine();
+        System.out.println("Rate their macro (0-10)");
+        String macro = Input.nextLine();
     }
     public static void EditStats() {
     }
