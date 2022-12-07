@@ -16,12 +16,12 @@ public class Team {
     int elo;
     static String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
     static String[] styles = {"Neutral", "Passive", "Aggressive"};
-    static ArrayList<Team> teamlist = new ArrayList<Team>();
+    static HashMap<String,Team> teamlist = new HashMap<String,Team>();
     public static void initialize() {
         Team C9 = new Team("Cloud9", "C9", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
-        teamlist.add(C9);
+        teamlist.put(C9.id, C9);
         Team FLY = new Team("FlyQuest", "FLY", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
-        teamlist.add(FLY);
+        teamlist.put(FLY.id, FLY);
     }
     public void view() {
         System.out.println("Team: " + name);
