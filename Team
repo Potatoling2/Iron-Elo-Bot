@@ -18,9 +18,9 @@ public class Team {
     static String[] styles = {"Neutral", "Passive", "Aggressive"};
     static ArrayList<Team> teamlist = new ArrayList<Team>();
     public static void initialize() {
-        Team C9 = new Team("Cloud9", "C9", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
+        Team C9 = new Team("Cloud9", "C9", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
         teamlist.add(C9);
-        Team FLY = new Team("FlyQuest", "FLY", "LCS", "Neutral", 50, 50, 50, 50, 50, 50, 50);
+        Team FLY = new Team("FlyQuest", "FLY", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
         teamlist.add(FLY);
     }
     public void view() {
