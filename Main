@@ -20,18 +20,41 @@ import java.util.*;
 import java.lang.Math;
 public class Main {
     static Scanner Input = new Scanner(System.in);
+    static boolean counter = false;
     public static void Stats() {
-        System.out.println("Which team would you like to view the stats of? Input their ID to view.");
+        counter = false;
         Input.nextLine();
+        System.out.println("Which team would you like to view the stats of? Input their ID to view.");
         String team = Input.nextLine();
         System.out.println("");
         for(int a = 0; a < Team.teamlist.size(); a++) {
             if(team.toUpperCase().equals(Team.teamlist.get(a).id)) {
                 Team.teamlist.get(a).view();
+                counter = true;
             }
+        }
+        if(!counter) {
+            System.out.println("No Team found. Try resetting and adding a database, or adding your own team.");
         }
     }
     public static void AddTeam() {
+        Input.nextLine();
+        System.out.println("What is the name of the team?");
+        String team = Input.nextLine();
+        System.out.println("What 2-3 character ID will they have?");
+        String id = Input.nextLine();
+        System.out.println("What region are they from? (Type 'idk' to view a list of the regions)");
+        String region = Input.nextLine();
+        if(region.equals("idk")) {
+            System.out.println("LCK (Korea), LPL (China), LEC (Europe), LCS (North America)");
+            System.out.println("VCS (Vietnam), PCS (Southeast Asia), LJL (Japan), CBLOL (Brazil)");
+            System.out.println("LCL (Commonwealth of Independent States), LLA (Latin America), TCL (Turkey), LCO (Oceania)");
+            System.out.println("");
+            System.out.println("What region are they from?");
+            region = Input.nextLine();
+        }
+        System.out.println("Do they have a specific style? (neutral/passive/aggressive)");
+        String style = Input.nextLine();
     }
     public static void EditStats() {
     }
@@ -55,7 +78,7 @@ public class Main {
             System.out.println("Ok then, let's proceed.");
             System.out.println("");
         }
-        System.out.println("Would you like to use a premade database of potential Worlds Qualifying teams? (yes/no)");
+        System.out.println("Would you like to use a premade database of all Worlds 2022 Qualifying teams? (yes/no)");
         String database = Input.nextLine();
         if(database.toLowerCase().contains("y")) {
             Team.initialize();
