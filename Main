@@ -27,8 +27,8 @@ public class Main {
         System.out.println("Which team would you like to view the stats of? Input their ID to view.");
         String team = Input.nextLine();
         System.out.println("");
-        for(int a = 0; a < Team.teamlist.size(); a++) {
-            if(team.toUpperCase().equals(Team.teamlist.get(a).id)) {
+        for(String a : Team.teamlist.keySet()) {
+            if(team.toUpperCase().equals(a)) {
                 Team.teamlist.get(a).view();
                 counter = true;
             }
