@@ -15,7 +15,7 @@ public class Team {
     int styleid;
     int elo;
     static String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
-    static String[] styles = {"Neutral", "Passive", "Aggressive"};
+    static String[] styles = {"NEUTRAL", "PASSIVE", "AGGRESSIVE"};
     static HashMap<String,Team> teamlist = new HashMap<String,Team>();
     public static void initialize() {
         Team C9 = new Team("Cloud9", "C9", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
@@ -36,6 +36,8 @@ public class Team {
         System.out.println("Teamfight Rating: " + teamfight);
         System.out.println("Macro Rating: " + macro);
         System.out.println("Elo: " + elo);
+        System.out.println(regionid);
+        System.out.println(styleid);
         System.out.println("");
     }
     Team(String a, String b, String c, String d, int e, int f, int g, int h, int i, int j, int k) {
@@ -51,59 +53,53 @@ public class Team {
         teamfight = j;
         macro = k;
         for(int r = 0; r < 12; r++) {
-            if(region.equals(regions[r])) {
+            if(region.toUpperCase().equals(regions[r])) {
                 regionid = r + 1;
             }
         }
         for(int s = 0; s < 3; s++) {
-            if(style.equals(styles[s])) {
+            if(style.toUpperCase().equals(styles[s])) {
                 styleid = s;
             }
         }
         elo = 1000;
     }
-    public void edit(String change, int value) {
+    public void edit(String id, String change, int value) {
         if(change.toLowerCase().equals("top")) {
-            top = value;
+            teamlist.get(id).top = value;
         }
         else if(change.toLowerCase().equals("jungle")) {
-            jungle = value;
+            teamlist.get(id).jungle = value;
         }
         else if(change.toLowerCase().equals("mid")) {
-            mid = value;
+            teamlist.get(id).mid = value;
         }
         else if(change.toLowerCase().equals("bot")) {
-            bot = value;
+            teamlist.get(id).bot = value;
         }
         else if(change.toLowerCase().equals("support")) {
-            support = value;
+            teamlist.get(id).support = value;
         }
         else if(change.toLowerCase().equals("teamfight")) {
-            teamfight = value;
+            teamlist.get(id).teamfight = value;
         }
         else if(change.toLowerCase().equals("macro")) {
-            macro = value;
+            teamlist.get(id).macro = value;
         }
     }
-    public void edit(String change, String value) {
-        if(change.toLowerCase().equals("name")) {
-            name = value;
-        }
-        else if(change.toLowerCase().equals("id")) {
-            id = value;
-        }
-        else if(change.toLowerCase().equals("region")) {
-            region = value;
+    public void edit(String id, String change, String value) {
+        if(change.toLowerCase().equals("region")) {
+            teamlist.get(id).region = value;
             for(int r = 0; r < 12; r++) {
-                if(region.equals(regions[r])) {
+                if(region.toUpperCase().equals(regions[r])) {
                     regionid = r + 1;
                 }
             }
         }
         else if(change.toLowerCase().equals("style")) {
-            style = value;
+            teamlist.get(id).style = value;
             for(int s = 0; s < 3; s++) {
-                if(style.equals(styles[s])) {
+                if(style.toUpperCase().equals(styles[s])) {
                     styleid = s;
                 }
             }
