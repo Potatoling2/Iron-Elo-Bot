@@ -56,21 +56,29 @@ public class Main {
         System.out.println("Do they have a specific style? (neutral/passive/aggressive)");
         String style = Input.nextLine();
         System.out.println("Rate their starting top laner (0-10)");
-        String top = Input.nextLine();
+        int top = Input.nextInt();
         System.out.println("Rate their starting jungler (0-10)");
-        String jungle = Input.nextLine();
+        int jungle = Input.nextInt();
         System.out.println("Rate their starting mid laner (0-10)");
-        String mid = Input.nextLine();
+        int mid = Input.nextInt();
         System.out.println("Rate their starting bot laner (0-10)");
-        String bot = Input.nextLine();
+        int bot = Input.nextInt();
         System.out.println("Rate their starting support (0-10)");
-        String support = Input.nextLine();
+        int support = Input.nextInt();
         System.out.println("Rate their teamfighting (0-10)");
-        String teamfight = Input.nextLine();
+        int teamfight = Input.nextInt();
         System.out.println("Rate their macro (0-10)");
-        String macro = Input.nextLine();
+        int macro = Input.nextInt();
+        Team a = new Team(team, id, region, style, top, jungle, mid, bot, support, teamfight, macro);
+        Team.teamlist.put(a.id, a);
+        System.out.println("Team added.");
+        System.out.println("");
     }
     public static void EditStats() {
+        System.out.println("Which team would you like to change a stat of? (Use the team's id)");
+        String id = Input.nextLine();
+        System.out.println("Which stat would you like to edit? (numerical or description)");
+        //continue work here
     }
     public static void Match() {
     }
