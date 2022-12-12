@@ -18,10 +18,55 @@ public class Team {
     static String[] styles = {"NEUTRAL", "PASSIVE", "AGGRESSIVE"};
     static HashMap<String,Team> teamlist = new HashMap<String,Team>();
     public static void initialize() {
+        Team JDG = new Team("JD Gaming", "JDG", "LPL", "Neutral", 10, 10, 7, 8, 8, 7, 8);
+        teamlist.put(JDG.id, JDG);
+        Team TES = new Team("Top Esports", "TES", "LPL", "Neutral", 6, 9, 10, 9, 7, 6, 8);
+        teamlist.put(TES.id, TES);
+        Team EDG = new Team("EDward Gaming", "EDG", "LPL", "Neutral", 8, 8, 8, 10, 9, 8, 9);
+        teamlist.put(EDG.id, EDG);
+        Team RNG = new Team("Royal Never Give Up", "RNG", "LPL", "Neutral", 8, 8, 10, 9, 9, 8, 8);
+        teamlist.put(RNG.id, RNG);
+        //lpl teams done start here
+        Team GEN = new Team("Gen.G", "GEN", "LCK", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(GEN.id, GEN);
+        Team T1 = new Team("T1", "T1", "LCK", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(T1.id, T1);
+        Team DK = new Team("DWG KIA", "DK", "LCK", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(DK.id, DK);
+        Team DRX = new Team("DRX", "DRX", "LCK", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(DRX.id, DRX);
+        Team RGE = new Team("Rogue", "RGE", "LEC", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(RGE.id, RGE);
+        Team G2 = new Team("G2 Esports", "G2", "LEC", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(G2.id, G2);
+        Team FNC = new Team("Fnatic", "FNC", "LEC", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(FNC.id, FNC);
+        Team MAD = new Team("MAD Lions", "MAD", "LEC", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(MAD.id, MAD);
         Team C9 = new Team("Cloud9", "C9", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(C9.id, C9);
-        Team FLY = new Team("FlyQuest", "FLY", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
-        teamlist.put(FLY.id, FLY);
+        Team IOO = new Team("100 Thieves", "IOO", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(IOO.id, IOO);
+        Team EG = new Team("Evil Geniuses", "EG", "LCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(EG.id, EG);
+        Team CFO = new Team("CTBC Flying Oyster", "CFO", "PCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(CFO.id, CFO);
+        Team BYG = new Team("Beyond Gaming", "BYG", "PCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(BYG.id, BYG);
+        Team GAM = new Team("GAM Esports", "GAM", "VCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(GAM.id, GAM);
+        Team SGB = new Team("Saigon Buffalo", "SGB", "VCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(SGB.id, SGB);
+        Team DFM = new Team("DetonatioN FocusMe", "DFM", "LJL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(DFM.id, DFM);
+        Team CHF = new Team("Chiefs Esports Club", "CHF", "LCO", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(CHF.id, CHF);
+        Team IW = new Team("Istanbul Wildcats", "IW", "TCL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(IW.id, IW);
+        Team ISG = new Team("Isurus", "ISG", "LLA", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(ISG.id, ISG);
+        Team LLL = new Team("LOUD", "LLL", "CBLOL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        teamlist.put(LLL.id, LLL);
     }
     public void view() {
         System.out.println("Team: " + name);
@@ -36,8 +81,6 @@ public class Team {
         System.out.println("Teamfight Rating: " + teamfight);
         System.out.println("Macro Rating: " + macro);
         System.out.println("Elo: " + elo);
-        System.out.println(regionid);
-        System.out.println(styleid);
         System.out.println("");
     }
     Team(String a, String b, String c, String d, int e, int f, int g, int h, int i, int j, int k) {
@@ -66,30 +109,30 @@ public class Team {
     }
     public void edit(String id, String change, int value) {
         if(change.toLowerCase().equals("top")) {
-            teamlist.get(id).top = value;
+            top = value;
         }
         else if(change.toLowerCase().equals("jungle")) {
-            teamlist.get(id).jungle = value;
+            jungle = value;
         }
         else if(change.toLowerCase().equals("mid")) {
-            teamlist.get(id).mid = value;
+            mid = value;
         }
         else if(change.toLowerCase().equals("bot")) {
-            teamlist.get(id).bot = value;
+            bot = value;
         }
         else if(change.toLowerCase().equals("support")) {
-            teamlist.get(id).support = value;
+            support = value;
         }
         else if(change.toLowerCase().equals("teamfight")) {
-            teamlist.get(id).teamfight = value;
+            teamfight = value;
         }
         else if(change.toLowerCase().equals("macro")) {
-            teamlist.get(id).macro = value;
+            macro = value;
         }
     }
     public void edit(String id, String change, String value) {
         if(change.toLowerCase().equals("region")) {
-            teamlist.get(id).region = value;
+            region = value;
             for(int r = 0; r < 12; r++) {
                 if(region.toUpperCase().equals(regions[r])) {
                     regionid = r + 1;
