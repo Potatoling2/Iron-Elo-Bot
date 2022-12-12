@@ -75,10 +75,33 @@ public class Main {
         System.out.println("");
     }
     public static void EditStats() {
+        Input.nextLine();
         System.out.println("Which team would you like to change a stat of? (Use the team's id)");
         String id = Input.nextLine();
         System.out.println("Which stat would you like to edit? (numerical or description)");
-        //continue work here
+        char choice = Input.nextLine().charAt(0);
+        if(choice == 'n') {
+            System.out.println("Which stat would you like to edit?");
+            String change = Input.nextLine();
+            System.out.println("What would you like to change the value to?");
+            int value = Input.nextInt();
+            for(String a : Team.teamlist.keySet()) {
+                if(id.toUpperCase().equals(a)) {
+                    Team.teamlist.get(a).edit(id, change, value);
+                }
+            }
+        }
+        else if(choice == 'd') {
+            System.out.println("Which stat would you like to edit?");
+            String change = Input.nextLine();
+            System.out.println("What would you like to change the value to?");
+            String value = Input.nextLine();
+            for(String a : Team.teamlist.keySet()) {
+                if(id.toUpperCase().equals(a)) {
+                    Team.teamlist.get(a).edit(id, change, value);
+                }
+            }
+        }
     }
     public static void Match() {
     }
