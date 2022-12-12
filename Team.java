@@ -48,14 +48,14 @@ public class Team {
         teamlist.put(IOO.id, IOO);
         Team EG = new Team("Evil Geniuses", "EG", "LCS", "Neutral", 9, 10, 8, 4, 8, 6, 7);
         teamlist.put(EG.id, EG);
-        //Major Regions Done
-        Team CFO = new Team("CTBC Flying Oyster", "CFO", "PCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team CFO = new Team("CTBC Flying Oyster", "CFO", "PCS", "Neutral", 10, 8, 9, 7, 8, 8, 7);
         teamlist.put(CFO.id, CFO);
-        Team BYG = new Team("Beyond Gaming", "BYG", "PCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team BYG = new Team("Beyond Gaming", "BYG", "PCS", "Neutral", 7, 7, 6, 6, 5, 7, 6);
         teamlist.put(BYG.id, BYG);
+        //work here
         Team GAM = new Team("GAM Esports", "GAM", "VCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(GAM.id, GAM);
-        Team SGB = new Team("Saigon Buffalo", "SGB", "VCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team SGB = new Team("Saigon Buffalo", "SGB", "VCS", "Aggressive", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(SGB.id, SGB);
         Team DFM = new Team("DetonatioN FocusMe", "DFM", "LJL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(DFM.id, DFM);
@@ -65,7 +65,7 @@ public class Team {
         teamlist.put(IW.id, IW);
         Team ISG = new Team("Isurus", "ISG", "LLA", "Neutral", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(ISG.id, ISG);
-        Team LLL = new Team("LOUD", "LLL", "CBLOL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team LLL = new Team("LOUD", "LLL", "CBLOL", "Aggressive", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(LLL.id, LLL);
     }
     public void view() {
