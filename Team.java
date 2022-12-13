@@ -53,13 +53,13 @@ public class Team {
         Team BYG = new Team("Beyond Gaming", "BYG", "PCS", "Neutral", 7, 7, 6, 6, 5, 7, 6);
         teamlist.put(BYG.id, BYG);
         //work here
-        Team GAM = new Team("GAM Esports", "GAM", "VCS", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team GAM = new Team("GAM Esports", "GAM", "VCS", "Neutral", 8, 9, 7, 9, 9, 9, 7);
         teamlist.put(GAM.id, GAM);
-        Team SGB = new Team("Saigon Buffalo", "SGB", "VCS", "Aggressive", 5, 5, 5, 5, 5, 5, 5);
+        Team SGB = new Team("Saigon Buffalo", "SGB", "VCS", "Aggressive", 9, 7, 6, 10, 7, 7, 6);
         teamlist.put(SGB.id, SGB);
-        Team DFM = new Team("DetonatioN FocusMe", "DFM", "LJL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team DFM = new Team("DetonatioN FocusMe", "DFM", "LJL", "Aggressive", 10, 9, 10, 8, 5, 5, 5);
         teamlist.put(DFM.id, DFM);
-        Team CHF = new Team("Chiefs Esports Club", "CHF", "LCO", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team CHF = new Team("Chiefs Esports Club", "CHF", "LCO", "Passive", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(CHF.id, CHF);
         Team IW = new Team("Istanbul Wildcats", "IW", "TCL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
         teamlist.put(IW.id, IW);
