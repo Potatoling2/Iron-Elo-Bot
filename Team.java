@@ -17,7 +17,7 @@ public class Team {
     static String[] regions = {"LCK", "LPL", "LEC", "LCS", "VCS", "PCS", "LJL", "CBLOL", "LCL", "LLA", "TCL", "LCO"};
     static String[] styles = {"NEUTRAL", "PASSIVE", "AGGRESSIVE"};
     static HashMap<String,Team> teamlist = new HashMap<String,Team>();
-    public static void initialize() {
+    public static void initializeWorlds22() {
         Team JDG = new Team("JD Gaming", "JDG", "LPL", "Aggressive", 10, 10, 7, 8, 8, 7, 8);
         teamlist.put(JDG.id, JDG);
         Team TES = new Team("Top Esports", "TES", "LPL", "Aggressive", 7, 9, 10, 9, 7, 6, 8);
@@ -52,20 +52,19 @@ public class Team {
         teamlist.put(CFO.id, CFO);
         Team BYG = new Team("Beyond Gaming", "BYG", "PCS", "Neutral", 7, 7, 6, 6, 5, 7, 6);
         teamlist.put(BYG.id, BYG);
-        //work here
         Team GAM = new Team("GAM Esports", "GAM", "VCS", "Neutral", 8, 9, 7, 9, 9, 9, 7);
         teamlist.put(GAM.id, GAM);
         Team SGB = new Team("Saigon Buffalo", "SGB", "VCS", "Aggressive", 9, 7, 6, 10, 7, 7, 6);
         teamlist.put(SGB.id, SGB);
-        Team DFM = new Team("DetonatioN FocusMe", "DFM", "LJL", "Aggressive", 10, 9, 10, 8, 5, 5, 5);
+        Team DFM = new Team("DetonatioN FocusMe", "DFM", "LJL", "Aggressive", 10, 9, 10, 8, 9, 9, 8);
         teamlist.put(DFM.id, DFM);
-        Team CHF = new Team("Chiefs Esports Club", "CHF", "LCO", "Passive", 5, 5, 5, 5, 5, 5, 5);
+        Team CHF = new Team("Chiefs Esports Club", "CHF", "LCO", "Passive", 8, 9, 9, 10, 10, 9, 9);
         teamlist.put(CHF.id, CHF);
-        Team IW = new Team("Istanbul Wildcats", "IW", "TCL", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team IW = new Team("Istanbul Wildcats", "IW", "TCL", "Neutral", 7, 7, 10, 10, 9, 8, 7);
         teamlist.put(IW.id, IW);
-        Team ISG = new Team("Isurus", "ISG", "LLA", "Neutral", 5, 5, 5, 5, 5, 5, 5);
+        Team ISG = new Team("Isurus", "ISG", "LLA", "Neutral", 8, 9, 7, 6, 8, 7, 8);
         teamlist.put(ISG.id, ISG);
-        Team LLL = new Team("LOUD", "LLL", "CBLOL", "Aggressive", 5, 5, 5, 5, 5, 5, 5);
+        Team LLL = new Team("LOUD", "LLL", "CBLOL", "Aggressive", 9, 7, 9, 9, 9, 10, 8);
         teamlist.put(LLL.id, LLL);
     }
     public void view() {
