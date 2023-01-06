@@ -22,6 +22,7 @@ public class Game {
             lead = lead * -1;
             team++;
         }
+        //add more ints to include team names here
         System.out.println("");
     }
     public static void objective() {
