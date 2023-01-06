@@ -104,6 +104,34 @@ public class Main {
         }
     }
     public static void Match() {
+        Input.nextLine();
+        System.out.println("Select the first team to match. (Use Team's ID)");
+        String team1 = Input.nextLine();
+        System.out.println("Select the second team to match. (Use Team's ID)");
+        String team2 = Input.nextLine();
+        for(String a : Team.teamlist.keySet()) {
+            if(team1.toUpperCase().equals(a)) {
+                for(String b : Team.teamlist.keySet()) {
+                    if(team2.toUpperCase().equals(b)) {
+                        System.out.println(Team.teamlist.get(a).name + " VS " + Team.teamlist.get(b).name);
+                        System.out.println("");
+                        System.out.println("Top Lane: ");
+                        int topdiff = Game.solorole(Team.teamlist.get(a).top, Team.teamlist.get(b).top);
+                        Game.gold(topdiff);
+                        System.out.println("Jungle: ");
+                        int jgdiff = Game.solorole(Team.teamlist.get(a).jungle, Team.teamlist.get(b).jungle);
+                        Game.gold(jgdiff);
+                        System.out.println("Mid Lane: ");
+                        int middiff = Game.solorole(Team.teamlist.get(a).mid, Team.teamlist.get(b).mid);
+                        Game.gold(middiff);
+                        System.out.println("Bot Lane: ");
+                        int botdiff = Game.duolane(Team.teamlist.get(a).bot, Team.teamlist.get(a).support, Team.teamlist.get(b).bot, Team.teamlist.get(b).support);
+                        Game.gold(botdiff);
+                        System.out.println("");
+                    }
+                }
+            }
+        }
     }
     public static void main(String args[]) {
         System.out.println("Welcome to Iron Elo, a League of Legends Esports Simulator.");
@@ -123,17 +151,6 @@ public class Main {
             System.out.println("Ok then, let's proceed.");
             System.out.println("");
         }
-        System.out.println("Would you like to use a premade database of all Worlds 2022 Qualifying teams? (yes/no)");
-        String database = Input.nextLine();
-        if(database.toLowerCase().contains("y")) {
-            Team.initialize();
-            System.out.println("Teams added.");
-            System.out.println("");
-        }
-        else {
-            System.out.println("Ok then, let's proceed.");
-            System.out.println("");
-        }
         boolean a = false;
         while(!a) {
             System.out.println("What would you like to do today?");
@@ -141,9 +158,10 @@ public class Main {
             System.out.println("2. Add team(s)");
             System.out.println("3. Modify team stats");
             System.out.println("4. Run a match");
-            System.out.println("5. See explanation");
-            System.out.println("6. Stats breakdown");
-            System.out.println("7. End program");
+            System.out.println("5. Add Databases");
+            System.out.println("6. See explanation");
+            System.out.println("7. Stats breakdown");
+            System.out.println("8. End program");
             System.out.println("");
             int choice = Input.nextInt();
             switch(choice) {
@@ -160,6 +178,16 @@ public class Main {
                     Match();
                     break;
                 case 5:
+                    System.out.println("Would you like to use a premade database of all Worlds 2022 Qualifying teams? (yes/no)");
+                    Input.nextLine();
+                    String worlds22 = Input.nextLine();
+                    if(worlds22.toLowerCase().contains("y")) {
+                        Team.initializeWorlds22();
+                        System.out.println("Teams added.");
+                        System.out.println("");
+                    }
+                    break;
+                case 6:
                     System.out.println("This program contains statistics on every worlds contending region's teams, with values and metrics to describe and differentiate them.");
                     System.out.println("You can view each's team's stats, add your own custom teams, edit current team stats, and run simulation matches between teams.");
                     System.out.println("Each team has their 2-3 letter id stored, a power ranking for their individual players, a teamfight rating, macro rating, and playstyle.");
@@ -168,7 +196,7 @@ public class Main {
                     System.out.println("It is recommended to keep stats the same for tournament simulation, barring drastic changes such as substitutions.");
                     System.out.println("");
                     break;
-                case 6:
+                case 7:
                     System.out.println("Always remember that stats are region exclusive, meaning there is no bias for being from the LCK or LPL compared to the LJL.");
                     System.out.println("The difference in skill will be accounted for if the international tournament setting is used for matchups.");
                     System.out.println("Laning metrics are out of 10, with 10 representing the best in the region, and 0 representing an extreme liability for their team.");
@@ -176,7 +204,7 @@ public class Main {
                     System.out.println("Playstyle is minor metric that gives a small bonus for playing either very aggressively or very passively against a neutral playstyle.");
                     System.out.println("");
                     break;
-                case 7:
+                case 8:
                     System.out.println("Thank you for using Iron Elo.");
                     a = true;
                     break;
