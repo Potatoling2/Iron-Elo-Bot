@@ -9,21 +9,26 @@ public class Game {
     public static int duolane(int b1, int s1, int b2, int s2) {
         return (b1 + s1) - (b2 + s2);
     }
-    public static void gold(int diff) {
-        int team = 1;
+    public static int gold(int diff, String team1, String team2) {
         if(diff > 7) {
             diff = 7;
         }
         int bound = 50 + diff * 7;
         int factor = bound - Rand(1,100);
-        //incomplete
         int lead = factor * 50;
         if(lead < 0) {
             lead = lead * -1;
-            team++;
+            System.out.println(lead + " gold lead for " + team2);
+            lead = lead * -1;
         }
-        //add more ints to include team names here
+        else if(lead > 0) {
+            System.out.println(lead + " gold lead for " + team1);
+        }
+        else if(lead == 0) {
+            System.out.println("Even Gold Lead");
+        }
         System.out.println("");
+        return lead;
     }
     public static void objective() {
     }
