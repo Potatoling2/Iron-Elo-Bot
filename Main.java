@@ -117,16 +117,29 @@ public class Main {
                         System.out.println("");
                         System.out.println("Top Lane: ");
                         int topdiff = Game.solorole(Team.teamlist.get(a).top, Team.teamlist.get(b).top);
-                        Game.gold(topdiff);
+                        int toplead = Game.gold(topdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         System.out.println("Jungle: ");
                         int jgdiff = Game.solorole(Team.teamlist.get(a).jungle, Team.teamlist.get(b).jungle);
-                        Game.gold(jgdiff);
+                        int jglead = Game.gold(jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         System.out.println("Mid Lane: ");
                         int middiff = Game.solorole(Team.teamlist.get(a).mid, Team.teamlist.get(b).mid);
-                        Game.gold(middiff);
+                        int midlead = Game.gold(middiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         System.out.println("Bot Lane: ");
                         int botdiff = Game.duolane(Team.teamlist.get(a).bot, Team.teamlist.get(a).support, Team.teamlist.get(b).bot, Team.teamlist.get(b).support);
-                        Game.gold(botdiff);
+                        int botlead = Game.gold(botdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        int goldlead = (toplead + jglead + midlead + botlead);
+                        System.out.println("Laning Phase Done!");
+                        if(goldlead < 0) {
+                            goldlead = goldlead * -1;
+                            System.out.println(goldlead + " gold lead for " + team2);
+                            goldlead = goldlead * -1;
+                        }
+                        else if(goldlead > 0) {
+                            System.out.println(goldlead + " gold lead for " + team1);
+                        }
+                        else if(goldlead == 0) {
+                            System.out.println("Even Gold Lead");
+                        }
                         System.out.println("");
                     }
                 }
