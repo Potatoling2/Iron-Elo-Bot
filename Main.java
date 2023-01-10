@@ -115,6 +115,7 @@ public class Main {
                     if(team2.toUpperCase().equals(b)) {
                         System.out.println(Team.teamlist.get(a).name + " VS " + Team.teamlist.get(b).name);
                         System.out.println("");
+                        //game time: 00:00
                         System.out.println("Top Lane: ");
                         int topdiff = Game.solorole(Team.teamlist.get(a).top, Team.teamlist.get(b).top);
                         int toplead = Game.gold(topdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
@@ -128,6 +129,13 @@ public class Main {
                         int botdiff = Game.duolane(Team.teamlist.get(a).bot, Team.teamlist.get(a).support, Team.teamlist.get(b).bot, Team.teamlist.get(b).support);
                         int botlead = Game.gold(botdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         int goldlead = (toplead + jglead + midlead + botlead);
+                        //game time 06:00
+                        System.out.println("First Dragon: ");
+                        //figure out a way to edit gold lead as well
+                        int objlead = Game.objective(botlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        //game time 08:00
+                        System.out.println("First Herald: ");
+                        objlead = objlead + Game.objective(toplead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         System.out.println("Laning Phase Done!");
                         if(goldlead < 0) {
                             goldlead = goldlead * -1;
@@ -140,6 +148,7 @@ public class Main {
                         else if(goldlead == 0) {
                             System.out.println("Even Gold Lead");
                         }
+                        
                         System.out.println("");
                     }
                 }
