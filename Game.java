@@ -55,9 +55,9 @@ public class Game {
         System.out.println("");
         return lead;
     }
-    public static int objective(int lead, int jgdiff, String team1, String team2) {
+    public static int objective(int lead, int jgdiff, int objlead, String team1, String team2) {
         int golddiff = lead / 2000;
-        int diff = golddiff + jgdiff;
+        int diff = golddiff + jgdiff + objlead;
         int objdiff = pcheck(diff);
         if(objdiff < 0) {
             System.out.println("Objective for " + team2);
@@ -65,6 +65,7 @@ public class Game {
         else if(objdiff > 0) {
             System.out.println("Objective for " + team1);
         }
+        System.out.println("");
         return objdiff;
     }
     public static void win() {
