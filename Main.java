@@ -131,11 +131,27 @@ public class Main {
                         int goldlead = (toplead + jglead + midlead + botlead);
                         //game time 06:00
                         System.out.println("First Dragon: ");
-                        //figure out a way to edit gold lead as well
-                        int objlead = Game.objective(botlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        //code broken (add difference in dragons as "objlead" in game class)
+                        int obj = Game.objective(botlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        int objlead = obj;
+                        int[] dragons = {0,0};
+                        if(obj > 0) {
+                            dragons[0]++;
+                        }
+                        else if(obj < 0) {
+                            dragons[1]++;
+                        }
                         //game time 08:00
                         System.out.println("First Herald: ");
-                        objlead = objlead + Game.objective(toplead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(toplead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            goldlead += 500;
+                        }
+                        else if(obj < 0) {
+                            goldlead -= 500;
+                        }
+                        objlead += obj;
+                        //game time 14:00
                         System.out.println("Laning Phase Done!");
                         if(goldlead < 0) {
                             goldlead = goldlead * -1;
@@ -148,7 +164,27 @@ public class Main {
                         else if(goldlead == 0) {
                             System.out.println("Even Gold Lead");
                         }
-                        
+                        //game time 15:00
+                        System.out.println("Second Dragon: ");
+                        obj = Game.objective(botlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            dragons[0]++;
+                        }
+                        else if(obj < 0) {
+                            dragons[1]++;
+                        }
+                        objlead += obj;
+                        //game time 16:00
+                        System.out.println("Second Herald: ");
+                        obj = Game.objective(goldlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            goldlead += 700;
+                        }
+                        else if(obj < 0) {
+                            goldlead -= 700;
+                        }
+                        objlead += obj;
+                        //game time 20
                         System.out.println("");
                     }
                 }
