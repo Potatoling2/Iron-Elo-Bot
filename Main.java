@@ -131,10 +131,11 @@ public class Main {
                         int goldlead = (toplead + jglead + midlead + botlead);
                         //game time 06:00
                         System.out.println("First Dragon: ");
-                        //code broken (add difference in dragons as "objlead" in game class)
-                        int obj = Game.objective(botlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
-                        int objlead = obj;
+                        //code broken (add difference in dragons as "objdiff" in game class)
                         int[] dragons = {0,0};
+                        int objdiff = dragons[0] - dragons[1];
+                        int obj = Game.objective(botlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        int objlead = obj;
                         if(obj > 0) {
                             dragons[0]++;
                         }
@@ -143,7 +144,8 @@ public class Main {
                         }
                         //game time 08:00
                         System.out.println("First Herald: ");
-                        obj = Game.objective(toplead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        objdiff = dragons[0] - dragons[1];
+                        obj = Game.objective(toplead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             goldlead += 500;
                         }
@@ -166,7 +168,8 @@ public class Main {
                         }
                         //game time 15:00
                         System.out.println("Second Dragon: ");
-                        obj = Game.objective(botlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        objdiff = dragons[0] - dragons[1];
+                        obj = Game.objective(botlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             dragons[0]++;
                         }
@@ -176,7 +179,8 @@ public class Main {
                         objlead += obj;
                         //game time 16:00
                         System.out.println("Second Herald: ");
-                        obj = Game.objective(goldlead, jgdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        objdiff = dragons[0] - dragons[1];
+                        obj = Game.objective(goldlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             goldlead += 700;
                         }
