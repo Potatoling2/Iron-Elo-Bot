@@ -11,6 +11,6 @@ The odds of winning an objective fight depend on playstyle, gold advantage (gene
 
 Objective fights happen at game average times (playstle of teams doesn't affect it)
 
-Every 5 minutes (starting at 20), there's a random chance for one team to just win the game (odds go dramatically up the more buffs and advantages one team has)
+Every 10 minutes (starting at 20), there's a random chance for one team to just win the game (odds go dramatically up the more buffs and advantages one team has)
 
 Gold advantage is calculated after 14 minutes, then after every objective fight. This affects the random odds of winning.
