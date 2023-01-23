@@ -202,9 +202,17 @@ public class Main {
                         //endcheck 1
                         //game time 25:00 (dragon 4)
                         //game time 30:00 (baron 1)
-                        //game time 35:00 (dragon 5)
-                        //game time 40:00 (dragon 6)
-                        //game time 45:00 (dragon 7)
+                        //game time 30:00 (dragon 5)
+                        //end check 2
+                        //game time 35:00 (dragon 6)
+                        //game time 40:00 (dragon 7)
+                        //end check 3
+                        //game time 45:00 (baron 2)
+                        //game time 50:00 (dragon 8)
+                        //end check 4
+                        //game time 55:00 (dragon 9)
+                        //game time 60:00 (baron 3)
+                        //end check 5 (no chance for game continue)
                     }
                 }
             }
