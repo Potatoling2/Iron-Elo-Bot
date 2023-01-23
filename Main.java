@@ -188,8 +188,23 @@ public class Main {
                             goldlead -= 700;
                         }
                         objlead += obj;
-                        //game time 20
-                        System.out.println("");
+                        //game time 20:00
+                        System.out.println("Third Dragon: ");
+                        objdiff = dragons[0] - dragons[1];
+                        obj = Game.objective(goldlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            dragons[0]++;
+                        }
+                        else if(obj < 0) {
+                            dragons[1]++;
+                        }
+                        objlead += obj;
+                        //endcheck 1
+                        //game time 25:00 (dragon 4)
+                        //game time 30:00 (baron 1)
+                        //game time 35:00 (dragon 5)
+                        //game time 40:00 (dragon 6)
+                        //game time 45:00 (dragon 7)
                     }
                 }
             }
