@@ -131,7 +131,6 @@ public class Main {
                         int goldlead = (toplead + jglead + midlead + botlead);
                         //game time 06:00
                         System.out.println("First Dragon: ");
-                        //code broken (add difference in dragons as "objdiff" in game class)
                         int[] dragons = {0,0};
                         int objdiff = dragons[0] - dragons[1];
                         int obj = Game.objective(botlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
