@@ -53,8 +53,6 @@ public class Main {
             System.out.println("What region are they from?");
             region = Input.nextLine();
         }
-        System.out.println("Do they have a specific style? (neutral/passive/aggressive)");
-        String style = Input.nextLine();
         System.out.println("Rate their starting top laner (0-10)");
         int top = Input.nextInt();
         System.out.println("Rate their starting jungler (0-10)");
@@ -67,9 +65,7 @@ public class Main {
         int support = Input.nextInt();
         System.out.println("Rate their teamfighting (0-10)");
         int teamfight = Input.nextInt();
-        System.out.println("Rate their macro (0-10)");
-        int macro = Input.nextInt();
-        Team a = new Team(team, id, region, style, top, jungle, mid, bot, support, teamfight, macro);
+        Team a = new Team(team, id, region, top, jungle, mid, bot, support, teamfight);
         Team.teamlist.put(a.id, a);
         System.out.println("Team added.");
         System.out.println("");
@@ -224,7 +220,7 @@ public class Main {
         if(explain.toLowerCase().contains("y")) {
             System.out.println("This program contains statistics on every worlds contending region's teams, with values and metrics to describe and differentiate them.");
             System.out.println("You can view each's team's stats, add your own custom teams, edit current team stats, and run simulation matches between teams.");
-            System.out.println("Each team has their 2-3 letter id stored, a power ranking for their individual players, a teamfight rating, macro rating, and playstyle.");
+            System.out.println("Each team has their 2-3 letter id stored, a power ranking for their individual players, and teamfight rating.");
             System.out.println("Each team also has an overall 'elo' score that doesn't affect matches but helps to display which teams are doing well and which aren't.");
             System.out.println("Matches adjust elo score accordingly, but do not affect any of the team stats. Those must be edited by users.");
             System.out.println("It is recommended to keep stats the same for tournament simulation, barring drastic changes such as substitutions.");
@@ -274,7 +270,7 @@ public class Main {
                 case 6:
                     System.out.println("This program contains statistics on every worlds contending region's teams, with values and metrics to describe and differentiate them.");
                     System.out.println("You can view each's team's stats, add your own custom teams, edit current team stats, and run simulation matches between teams.");
-                    System.out.println("Each team has their 2-3 letter id stored, a power ranking for their individual players, a teamfight rating, macro rating, and playstyle.");
+                    System.out.println("Each team has their 2-3 letter id stored, a power ranking for their individual players, and teamfight rating.");
                     System.out.println("Each team also has an overall 'elo' score that doesn't affect matches but helps to display which teams are doing well and which aren't.");
                     System.out.println("Matches adjust elo score accordingly, but do not affect any of the team stats. Those must be edited by users.");
                     System.out.println("It is recommended to keep stats the same for tournament simulation, barring drastic changes such as substitutions.");
@@ -284,8 +280,7 @@ public class Main {
                     System.out.println("Always remember that stats are region exclusive, meaning there is no bias for being from the LCK or LPL compared to the LJL.");
                     System.out.println("The difference in skill will be accounted for if the international tournament setting is used for matchups.");
                     System.out.println("Laning metrics are out of 10, with 10 representing the best in the region, and 0 representing an extreme liability for their team.");
-                    System.out.println("Teamfighting and Macro are arbitrary stats out of 10, with 10 being best in class, and 0 being a massive issue.");
-                    System.out.println("Playstyle is minor metric that gives a small bonus for playing either very aggressively or very passively against a neutral playstyle.");
+                    System.out.println("Teamfighting is an arbitrary stat out of 10, with 10 being best in class, and 0 being a massive issue.");
                     System.out.println("");
                     break;
                 case 8:
