@@ -2,13 +2,13 @@
  * A program based around League of Legends Esports using my arbitrary stats and biases
  * The goal is to create a tool that has metrics for each individual team and can simulate matches between them
  * Each match will be determined based on a number of stats
- * Ex. lane power (all 5 positions), teamfighting, objective control (macro), playstyle (agressive vs scaling)
+ * Ex. lane power (all 5 positions) and teamfighting
  * The differential between these stats will give teams "points" towards how likely it is that they will win
  * The higher the differential between the points, the more likely it is they will win in my random simulator
  * No matches are guaranteed, otherwise all bo5's would be 3-0 and that would be boring
  * With the maximum possible differential between teams, the underdog should still have at least a 5-10% chance to win
  * Matches are always simulated individually, and can be done with or without elo in place
- * Each team should have an elo rating (probably not using elo formula, but some type of ranking to that effect)
+ * Each team should have an elo rating
  * This elo changes over the course of the season and can be turned on or off by the user if they are doing exhibition matches vs real simulations or predictions
  * A modifier for tournaments like a Worlds or MSI elo scaler can be applied to skew teams from major regions to have higher elo than those from minor ones
  * The team metrics can also be adjusted by the user if they want, changing their playstyle or player rankings as they see fit
