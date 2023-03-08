@@ -124,6 +124,7 @@ public class Main {
                         System.out.println("Bot Lane: ");
                         int botdiff = Game.duolane(Team.teamlist.get(a).bot, Team.teamlist.get(a).support, Team.teamlist.get(b).bot, Team.teamlist.get(b).support);
                         int botlead = Game.gold(botdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        int tfdiff = Game.sololane(Team.teamlist.get(a).teamfight, Team.teamlist.get(b).teamfight);
                         int goldlead = (toplead + jglead + midlead + botlead);
                         //game time 06:00
                         System.out.println("First Dragon: ");
@@ -175,7 +176,7 @@ public class Main {
                         //game time 16:00
                         System.out.println("Second Herald: ");
                         objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(goldlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             goldlead += 700;
                         }
@@ -186,7 +187,7 @@ public class Main {
                         //game time 20:00
                         System.out.println("Third Dragon: ");
                         objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(goldlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             dragons[0]++;
                         }
@@ -195,6 +196,8 @@ public class Main {
                         }
                         objlead += obj;
                         //endcheck 1
+                        //code setup for endcheck (wip)
+                        //int outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         //game time 25:00 (dragon 4)
                         //game time 30:00 (baron 1)
                         //game time 30:00 (dragon 5)
