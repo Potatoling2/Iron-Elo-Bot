@@ -148,7 +148,6 @@ public class Main {
                         else if(obj < 0) {
                             goldlead -= 500;
                         }
-                        objlead += obj;
                         //game time 14:00
                         System.out.println("Laning Phase Done!");
                         if(goldlead < 0) {
@@ -183,7 +182,6 @@ public class Main {
                         else if(obj < 0) {
                             goldlead -= 700;
                         }
-                        objlead += obj;
                         //game time 20:00
                         System.out.println("Third Dragon: ");
                         objdiff = dragons[0] - dragons[1];
