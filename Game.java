@@ -81,6 +81,17 @@ public class Game {
         System.out.println("");
         return objdiff;
     }
-    public static void win() {
+    public static void win(int goldlead, int objlead, String team1, String team2) {
+        boolean neg = false;
+        int goldfactor = lead / 2000;
+        int factor = goldfactor + objlead;
+        if(factor < 0) {
+            factor = factor * -1;
+            neg = true;
+        }
+        int bound = factor * 10;
+        if(bound >= Rand(1,100)) {
+        }
+        
     }
 }
