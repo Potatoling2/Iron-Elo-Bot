@@ -196,12 +196,30 @@ public class Main {
                         //endcheck 1
                         int outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
+                            System.out.println(Team.teamlist.get(a).name + " won the game!");
+                            break;
                         }
                         else if(outcome < 0) {
+                            System.out.println(Team.teamlist.get(b).name + " won the game!");
+                            break;
                         }
                         else {
+                            continue;
                         }
                         //game time 25:00 (dragon 4)
+                        System.out.println("Fourth Dragon: ");
+                        objdiff = dragons[0] - dragons[1];
+                        //dragon soul
+                        //if(objdiff == 4) {
+                        //}
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            dragons[0]++;
+                        }
+                        else if(obj < 0) {
+                            dragons[1]++;
+                        }
+                        objlead += obj;
                         //game time 30:00 (baron 1)
                         //game time 30:00 (dragon 5)
                         //end check 2
