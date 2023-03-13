@@ -23,11 +23,11 @@ public class Game {
             team = -1;
         }
         else if(check == 0) {
-            int tiecheck = Rand(1,100);
-            if(check > 50) {
+            int tiecheck = Rand(1,2);
+            if(check == 1) {
                 team = 1;
             }
-            else if(check < 50) {
+            else if(check == 2) {
                 team = -1;
             }
         }
@@ -92,7 +92,7 @@ public class Game {
         else if(factor > 0) {
             bound = factor * 10;
         }
-        if(bound > Rand(1,100)) {
+        if(bound >= Rand(1,100)) {
             outcome = pcheck(factor);
         }
         else {
