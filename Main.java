@@ -21,6 +21,7 @@ import java.lang.Math;
 public class Main {
     static Scanner Input = new Scanner(System.in);
     static boolean counter = false;
+    static boolean edrag = false;
     public static void Stats() {
         counter = false;
         Input.nextLine();
@@ -209,15 +210,21 @@ public class Main {
                         //game time 25:00 (dragon 4)
                         System.out.println("Fourth Dragon: ");
                         objdiff = dragons[0] - dragons[1];
-                        //dragon soul
-                        //if(objdiff == 4) {
-                        //}
                         obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             dragons[0]++;
                         }
                         else if(obj < 0) {
                             dragons[1]++;
+                        }
+                        //dragon soul
+                        if(dragons[0] == 4 && !edrag) {
+                            objlead += 2;
+                            edrag = true;
+                        }
+                        else if(dragons[1] == 4 && !edrag) {
+                            objlead -= 2;
+                            edrag = true;
                         }
                         objlead += obj;
                         //game time 30:00 (baron 1)
