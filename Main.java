@@ -22,6 +22,7 @@ public class Main {
     static Scanner Input = new Scanner(System.in);
     static boolean counter = false;
     static boolean edrag = false;
+    static boolean buffused = false;
     public static void Stats() {
         counter = false;
         Input.nextLine();
@@ -228,6 +229,19 @@ public class Main {
                         }
                         objlead += obj;
                         //game time 30:00 (baron 1)
+                        System.out.println("Baron: ");
+                        objdiff = dragons[0] - dragons[1];
+                        if(edrag) {
+                            tfdiff += 3;
+                            buffused = true;
+                        }
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            goldlead += 1500;
+                        }
+                        else if(obj < 0) {
+                            goldlead -= 1500;
+                        }
                         //game time 30:00 (dragon 5)
                         //end check 2
                         //game time 35:00 (dragon 6)
