@@ -23,6 +23,7 @@ public class Main {
     static boolean counter = false;
     static boolean edrag = false;
     static int baron = 0;
+    static int elder = 0;
     public static void Stats() {
         counter = false;
         Input.nextLine();
@@ -142,8 +143,7 @@ public class Main {
                         }
                         //game time 08:00
                         System.out.println("First Herald: ");
-                        objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(toplead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(toplead, jgdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             goldlead += 500;
                         }
@@ -165,8 +165,7 @@ public class Main {
                         }
                         //game time 15:00
                         System.out.println("Second Dragon: ");
-                        objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(botlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(botlead, jgdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             dragons[0]++;
                         }
@@ -176,8 +175,7 @@ public class Main {
                         objlead += obj;
                         //game time 16:00
                         System.out.println("Second Herald: ");
-                        objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             goldlead += 700;
                         }
@@ -186,8 +184,7 @@ public class Main {
                         }
                         //game time 20:00
                         System.out.println("Third Dragon: ");
-                        objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             dragons[0]++;
                         }
@@ -210,8 +207,7 @@ public class Main {
                         }
                         //game time 25:00 (dragon 4)
                         System.out.println("Fourth Dragon: ");
-                        objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             dragons[0]++;
                         }
@@ -230,14 +226,15 @@ public class Main {
                         objlead += obj;
                         //game time 30:00 (baron 1)
                         System.out.println("Baron: ");
-                        objdiff = dragons[0] - dragons[1];
-                        obj = Game.objective(goldlead, jgdiff, tfdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(obj > 0) {
                             goldlead += 1500;
+                            objlead += 2;
                             baron = 1;
                         }
                         else if(obj < 0) {
                             goldlead -= 1500;
+                            objlead += 2;
                             baron = -1;
                         }
                         //game time 30:00 (dragon 5)
