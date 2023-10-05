@@ -372,6 +372,32 @@ public class Main {
                             objlead += obj;
                         }
                         //end check 3
+                        int outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(outcome > 0) {
+                            System.out.println(Team.teamlist.get(a).name + " won the game!");
+                            break;
+                        }
+                        else if(outcome < 0) {
+                            System.out.println(Team.teamlist.get(b).name + " won the game!");
+                            break;
+                        }
+                        else {
+                            if(baron == 1) {
+                                objlead -= 2;
+                            }
+                            else if(baron == -1) {
+                                objlead += 2;
+                            }
+                            baron = 0;
+                            if(elder == 1) {
+                                objlead -= 3;
+                            }
+                            else if(elder == -1) {
+                                objlead += 3;
+                            }
+                            elder = 0;
+                            continue;
+                        }
                         //game time 45:00 (baron 2)
                         //game time 50:00 (dragon 8)
                         //end check 4
