@@ -43,11 +43,11 @@ public class Game {
         int lead = glead(diff);
         if(lead < 0) {
             lead = lead * -1;
-            System.out.println(lead + " gold lead for " + team2);
+            System.out.println(lead + " gold lead for " + team2 + "!");
             lead = lead * -1;
         }
         else if(lead > 0) {
-            System.out.println(lead + " gold lead for " + team1);
+            System.out.println(lead + " gold lead for " + team1 + "!");
         }
         else if(lead == 0) {
             System.out.println("Even Gold Lead");
@@ -60,10 +60,10 @@ public class Game {
         int diff = golddiff + jgdiff + objlead;
         int objdiff = pcheck(diff);
         if(objdiff < 0) {
-            System.out.println("Objective for " + team2);
+            System.out.println("Objective for " + team2 + "!");
         }
         else if(objdiff > 0) {
-            System.out.println("Objective for " + team1);
+            System.out.println("Objective for " + team1 + "!");
         }
         System.out.println("");
         return objdiff;
@@ -73,18 +73,18 @@ public class Game {
         int diff = golddiff + jgdiff + tfdiff + objlead;
         int objdiff = pcheck(diff);
         if(objdiff < 0) {
-            System.out.println("Objective for " + team2);
+            System.out.println("Objective for " + team2 + "!");
         }
         else if(objdiff > 0) {
-            System.out.println("Objective for " + team1);
+            System.out.println("Objective for " + team1 + "!");
         }
         System.out.println("");
         return objdiff;
     }
-    public static void win(int goldlead, int objlead, String team1, String team2) {
+    public static int win(int goldlead, int objlead, String team1, String team2) {
         int outcome;
-        int bound;
-        int goldfactor = lead / 2000;
+        int bound = 0;
+        int goldfactor = goldlead / 2000;
         int factor = goldfactor + objlead;
         if(factor < 0) {
             bound = factor * -10;
@@ -98,6 +98,14 @@ public class Game {
         else {
             outcome = 0;
         }
+        return outcome;
+    }
+    public static int end(int goldlead, int objlead, String team1, String team2) {
+        int outcome;
+        int bound = 0;
+        int goldfactor = goldlead / 2000;
+        int factor = goldfactor + objlead;
+        outcome = pcheck(factor);
         return outcome;
     }
 }
