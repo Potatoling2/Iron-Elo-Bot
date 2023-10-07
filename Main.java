@@ -135,6 +135,7 @@ public class Main {
                         int objdiff = objectives[0] - objectives[1];
                         int obj = Game.objective(botlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         int objlead = obj;
+                        int outcome;
                         if(obj > 0) {
                             objectives[0]++;
                         }
@@ -155,13 +156,16 @@ public class Main {
                         if(goldlead < 0) {
                             goldlead = goldlead * -1;
                             System.out.println(goldlead + " gold lead for " + team2);
+                            System.out.println("");
                             goldlead = goldlead * -1;
                         }
                         else if(goldlead > 0) {
                             System.out.println(goldlead + " gold lead for " + team1);
+                            System.out.println("");
                         }
                         else if(goldlead == 0) {
                             System.out.println("Even Gold Lead");
+                            System.out.println("");
                         }
                         //game time 15:00
                         System.out.println("Second Dragon: ");
@@ -193,7 +197,7 @@ public class Main {
                         }
                         objlead += obj;
                         //endcheck 1
-                        int outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
                             break;
@@ -201,9 +205,6 @@ public class Main {
                         else if(outcome < 0) {
                             System.out.println(Team.teamlist.get(b).name + " won the game!");
                             break;
-                        }
-                        else {
-                            continue;
                         }
                         //game time 25:00 (dragon 4)
                         System.out.println("Fourth Dragon: ");
@@ -215,12 +216,14 @@ public class Main {
                             objectives[1]++;
                         }
                         //dragon soul
-                        if(dragons[0] == 4 && !edrag) {
+                        if(objectives[0] == 4 && !edrag) {
                             objlead += 2;
+                            System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
                             edrag = true;
                         }
-                        else if(dragons[1] == 4 && !edrag) {
+                        else if(objectives[1] == 4 && !edrag) {
                             objlead -= 2;
+                            System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
                             edrag = true;
                         }
                         objlead += obj;
@@ -264,18 +267,20 @@ public class Main {
                                 objectives[1]++;
                             }
                             //dragon soul
-                            if(dragons[0] == 4 && !edrag) {
+                            if(objectives[0] == 4 && !edrag) {
                                 objlead += 2;
+                                System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
                                 edrag = true;
                             }
-                            else if(dragons[1] == 4 && !edrag) {
+                            else if(objectives[1] == 4 && !edrag) {
                                 objlead -= 2;
+                                System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
                                 edrag = true;
                             }
                             objlead += obj;
                         }
                         //end check 2
-                        int outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
                             break;
@@ -284,7 +289,7 @@ public class Main {
                             System.out.println(Team.teamlist.get(b).name + " won the game!");
                             break;
                         }
-                        else {
+                        else if(outcome == 0) {
                             if(baron == 1) {
                                 objlead -= 2;
                             }
@@ -299,7 +304,6 @@ public class Main {
                                 objlead += 3;
                             }
                             elder = 0;
-                            continue;
                         }
                         //game time 35:00 (dragon 6)
                         if(edrag) {
@@ -326,12 +330,14 @@ public class Main {
                                 objectives[1]++;
                             }
                             //dragon soul
-                            if(dragons[0] == 4 && !edrag) {
+                            if(objectives[0] == 4 && !edrag) {
                                 objlead += 2;
+                                System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
                                 edrag = true;
                             }
-                            else if(dragons[1] == 4 && !edrag) {
+                            else if(objectives[1] == 4 && !edrag) {
                                 objlead -= 2;
+                                System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
                                 edrag = true;
                             }
                             objlead += obj;
@@ -361,18 +367,20 @@ public class Main {
                                 objectives[1]++;
                             }
                             //dragon soul
-                            if(dragons[0] == 4 && !edrag) {
+                            if(objectives[0] == 4 && !edrag) {
                                 objlead += 2;
+                                System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
                                 edrag = true;
                             }
-                            else if(dragons[1] == 4 && !edrag) {
+                            else if(objectives[1] == 4 && !edrag) {
                                 objlead -= 2;
+                                System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
                                 edrag = true;
                             }
                             objlead += obj;
                         }
                         //end check 3
-                        int outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
                             break;
@@ -396,14 +404,99 @@ public class Main {
                                 objlead += 3;
                             }
                             elder = 0;
-                            continue;
                         }
                         //game time 45:00 (baron 2)
+                        System.out.println("Baron: ");
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            goldlead += 1500;
+                            objlead += 2;
+                            baron = 1;
+                            objectives[2]++;
+                        }
+                        else if(obj < 0) {
+                            goldlead -= 1500;
+                            objlead -= 2;
+                            baron = -1;
+                            objectives[3]++;
+                        }
                         //game time 50:00 (dragon 8)
+                        System.out.println("Elder Dragon: ");
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            objlead += 3;
+                            elder = 1;
+                            objectives[4]++;
+                        }
+                        else if(obj < 0) {
+                            objlead -= 3;
+                            elder = -1;
+                            objectives[5]++;
+                        }
                         //end check 4
+                        outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(outcome > 0) {
+                            System.out.println(Team.teamlist.get(a).name + " won the game!");
+                            break;
+                        }
+                        else if(outcome < 0) {
+                            System.out.println(Team.teamlist.get(b).name + " won the game!");
+                            break;
+                        }
+                        else {
+                            if(baron == 1) {
+                                objlead -= 2;
+                            }
+                            else if(baron == -1) {
+                                objlead += 2;
+                            }
+                            baron = 0;
+                            if(elder == 1) {
+                                objlead -= 3;
+                            }
+                            else if(elder == -1) {
+                                objlead += 3;
+                            }
+                            elder = 0;
+                        }
                         //game time 55:00 (dragon 9)
+                        System.out.println("Elder Dragon: ");
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            objlead += 3;
+                            elder = 1;
+                            objectives[4]++;
+                        }
+                        else if(obj < 0) {
+                            objlead -= 3;
+                            elder = -1;
+                            objectives[5]++;
+                        }
                         //game time 60:00 (baron 3)
+                        System.out.println("Baron: ");
+                        obj = Game.objective(goldlead, jgdiff, tfdiff, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(obj > 0) {
+                            goldlead += 1500;
+                            objlead += 2;
+                            baron = 1;
+                            objectives[2]++;
+                        }
+                        else if(obj < 0) {
+                            goldlead -= 1500;
+                            objlead -= 2;
+                            baron = -1;
+                            objectives[3]++;
+                        }
                         //end check 5 (no chance for game continue)
+                        outcome = Game.end(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
+                        if(outcome > 0) {
+                            System.out.println(Team.teamlist.get(a).name + " won the game!");
+                            break;
+                        }
+                        else if(outcome < 0) {
+                            System.out.println(Team.teamlist.get(b).name + " won the game!");
+                            break;
+                        }
                     }
                 }
             }
