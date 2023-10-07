@@ -132,10 +132,14 @@ public class Main {
                         //game time 06:00
                         System.out.println("First Dragon: ");
                         int[] objectives = {0,0,0,0,0,0};
+                        for(int i = 0; i < 5; i++) {
+                            objectives[i] = 0;
+                        }
                         int objdiff = objectives[0] - objectives[1];
                         int obj = Game.objective(botlead, jgdiff, objdiff, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         int objlead = obj;
                         int outcome;
+                        edrag = false;
                         if(obj > 0) {
                             objectives[0]++;
                         }
@@ -197,6 +201,20 @@ public class Main {
                         }
                         objlead += obj;
                         //endcheck 1
+                        if(goldlead < 0) {
+                            goldlead = goldlead * -1;
+                            System.out.println(goldlead + " gold lead for " + team2);
+                            System.out.println("");
+                            goldlead = goldlead * -1;
+                        }
+                        else if(goldlead > 0) {
+                            System.out.println(goldlead + " gold lead for " + team1);
+                            System.out.println("");
+                        }
+                        else if(goldlead == 0) {
+                            System.out.println("Even Gold Lead");
+                            System.out.println("");
+                        }
                         outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
@@ -219,11 +237,13 @@ public class Main {
                         if(objectives[0] == 4 && !edrag) {
                             objlead += 2;
                             System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
+                            System.out.println("");
                             edrag = true;
                         }
                         else if(objectives[1] == 4 && !edrag) {
                             objlead -= 2;
                             System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
+                            System.out.println("");
                             edrag = true;
                         }
                         objlead += obj;
@@ -270,16 +290,32 @@ public class Main {
                             if(objectives[0] == 4 && !edrag) {
                                 objlead += 2;
                                 System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
+                                System.out.println("");
                                 edrag = true;
                             }
                             else if(objectives[1] == 4 && !edrag) {
                                 objlead -= 2;
                                 System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
+                                System.out.println("");
                                 edrag = true;
                             }
                             objlead += obj;
                         }
                         //end check 2
+                        if(goldlead < 0) {
+                            goldlead = goldlead * -1;
+                            System.out.println(goldlead + " gold lead for " + team2);
+                            System.out.println("");
+                            goldlead = goldlead * -1;
+                        }
+                        else if(goldlead > 0) {
+                            System.out.println(goldlead + " gold lead for " + team1);
+                            System.out.println("");
+                        }
+                        else if(goldlead == 0) {
+                            System.out.println("Even Gold Lead");
+                            System.out.println("");
+                        }
                         outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
@@ -333,11 +369,13 @@ public class Main {
                             if(objectives[0] == 4 && !edrag) {
                                 objlead += 2;
                                 System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
+                                System.out.println("");
                                 edrag = true;
                             }
                             else if(objectives[1] == 4 && !edrag) {
                                 objlead -= 2;
                                 System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
+                                System.out.println("");
                                 edrag = true;
                             }
                             objlead += obj;
@@ -370,16 +408,32 @@ public class Main {
                             if(objectives[0] == 4 && !edrag) {
                                 objlead += 2;
                                 System.out.println(Team.teamlist.get(a).name + " claimed the soul!");
+                                System.out.println("");
                                 edrag = true;
                             }
                             else if(objectives[1] == 4 && !edrag) {
                                 objlead -= 2;
                                 System.out.println(Team.teamlist.get(b).name + " claimed the soul!");
+                                System.out.println("");
                                 edrag = true;
                             }
                             objlead += obj;
                         }
                         //end check 3
+                        if(goldlead < 0) {
+                            goldlead = goldlead * -1;
+                            System.out.println(goldlead + " gold lead for " + team2);
+                            System.out.println("");
+                            goldlead = goldlead * -1;
+                        }
+                        else if(goldlead > 0) {
+                            System.out.println(goldlead + " gold lead for " + team1);
+                            System.out.println("");
+                        }
+                        else if(goldlead == 0) {
+                            System.out.println("Even Gold Lead");
+                            System.out.println("");
+                        }
                         outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
@@ -434,6 +488,20 @@ public class Main {
                             objectives[5]++;
                         }
                         //end check 4
+                        if(goldlead < 0) {
+                            goldlead = goldlead * -1;
+                            System.out.println(goldlead + " gold lead for " + team2);
+                            System.out.println("");
+                            goldlead = goldlead * -1;
+                        }
+                        else if(goldlead > 0) {
+                            System.out.println(goldlead + " gold lead for " + team1);
+                            System.out.println("");
+                        }
+                        else if(goldlead == 0) {
+                            System.out.println("Even Gold Lead");
+                            System.out.println("");
+                        }
                         outcome = Game.win(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
@@ -488,13 +556,29 @@ public class Main {
                             objectives[3]++;
                         }
                         //end check 5 (no chance for game continue)
+                        if(goldlead < 0) {
+                            goldlead = goldlead * -1;
+                            System.out.println(goldlead + " gold lead for " + team2);
+                            System.out.println("");
+                            goldlead = goldlead * -1;
+                        }
+                        else if(goldlead > 0) {
+                            System.out.println(goldlead + " gold lead for " + team1);
+                            System.out.println("");
+                        }
+                        else if(goldlead == 0) {
+                            System.out.println("Even Gold Lead");
+                            System.out.println("");
+                        }
                         outcome = Game.end(goldlead, objlead, Team.teamlist.get(a).name, Team.teamlist.get(b).name);
                         if(outcome > 0) {
                             System.out.println(Team.teamlist.get(a).name + " won the game!");
+                            System.out.println("");
                             break;
                         }
                         else if(outcome < 0) {
                             System.out.println(Team.teamlist.get(b).name + " won the game!");
+                            System.out.println("");
                             break;
                         }
                     }
