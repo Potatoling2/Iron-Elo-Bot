@@ -14,3 +14,5 @@ Objective fights happen at game average times (playstle of teams doesn't affect 
 Every 10 minutes (starting at 20), there's a random chance for one team to just win the game (odds go dramatically up the more buffs and advantages one team has)
 
 Gold advantage is calculated after 14 minutes, then after every objective fight. This affects the random odds of winning.
+
+note: add multiplier (t1: lck/lpl, t2: lec/lcs, t3: pcs/vcs, t4: lla, cblol, ljl, t5: tcl, lco)
